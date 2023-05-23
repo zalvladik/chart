@@ -2,7 +2,7 @@ import corylus from './data/corylus.js'
 import alnus from './data/alnus.js'
 import all from './data/all.js'
 
-const numbers = []
+const numbers = [3448,810,2509,391,194,68]
 let total = 0
 numbers.map(number => total = total + number)
 console.log(total)
@@ -24,16 +24,38 @@ function addContainerAll(){
     <div class="container_doughnut">
     <h2>Весь пилок за Лютий </h2>
       <canvas id="all_february"></canvas>
+      <div class='text_container'>
+      <p class='text_item'>Corylus: 1699</p>
+      <p class='text_item'>Alnus: 454</p>
+      <p class='text_item'>Betula: 50</p>
+      <p class='text_item'>Populus: 14</p>
+      </div>
     </div>
 
     <div class="container_doughnut">
     <h2>Весь пилок за Березень</h2>
       <canvas id="all_march"></canvas>
+      <div class='text_container'>
+      <p class='text_item'>Corylus: 1124</p>
+      <p class='text_item'>Alnus: 733</p>
+      <p class='text_item'>Betula: 85</p>
+      <p class='text_item'>Populus: 257</p>
+      <p class='text_item'>Taxus: 168</p>
+      <p class='text_item'>Carpinus: 37</p>
+      </div>
     </div>
 
     <div class="container_doughnut">
     <h2>Весь пилок за Квітень</h2>
       <canvas id="all_april"></canvas>
+      <div class='text_container'> 
+      <p class='text_item'>Corylus: 3448</p>
+      <p class='text_item'>Alnus: 810</p>
+      <p class='text_item'>Betula: 2509</p>
+      <p class='text_item'>Populus: 391</p>
+      <p class='text_item'>Taxus: 194</p>
+      <p class='text_item'>Carpinus: 68</p>
+      </div>
     </div>
     </div>
   `
@@ -45,17 +67,58 @@ function addContainerAll(){
     new Chart(ctx7, {
         type: 'doughnut',
         data: all.february,
+        options: {
+          plugins: {
+            
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    font: {
+                        size: 25
+                    }
+                }
+            }
+        }
+
+      }
+  
         
     });
     
     new Chart(ctx8, {
         type: 'doughnut',
         data: all.march,
+        options: {
+          plugins: {
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    font: {
+                        size: 25
+                    }
+                }
+            }
+        }
+
+      }
     });
     
       new Chart(ctx9, {
         type: 'doughnut',
         data: all.april,
+        options: {
+          plugins: {
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    font: {
+                        size: 25
+                    }
+                }
+            }
+        }
+
+      }
     });
 
 }
@@ -85,6 +148,19 @@ function addContainerCorylus(){
         type: 'line',
         data: corylus.february,
         options: {
+          
+            plugins: {
+              legend: {
+                  labels: {
+                      // This more specific font property overrides the global property
+                      font: {
+                          size: 25
+                      }
+                  }
+              }
+          },
+  
+        
     scales: {
     y: {
       beginAtZero: true
@@ -98,6 +174,16 @@ function addContainerCorylus(){
         type: 'line',
         data: corylus.march,
         options: {
+          plugins: {
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    font: {
+                        size: 25
+                    }
+                }
+            }
+        },
     scales: {
     y: {
       beginAtZero: true
@@ -111,6 +197,16 @@ function addContainerCorylus(){
         type: 'line',
         data: corylus.april,
         options: {
+          plugins: {
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    font: {
+                        size: 25
+                    }
+                }
+            }
+        },
     scales: {
     y: {
       beginAtZero: true
@@ -147,6 +243,16 @@ function addContainerAlnus(){
         type: 'line',
         data: alnus.february,
         options: {
+          plugins: {
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    font: {
+                        size: 25
+                    }
+                }
+            }
+        },
     scales: {
     y: {
       beginAtZero: true
@@ -160,6 +266,16 @@ function addContainerAlnus(){
         type: 'line',
         data: alnus.march,
         options: {
+          plugins: {
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    font: {
+                        size: 25
+                    }
+                }
+            }
+        },
     scales: {
     y: {
       beginAtZero: true
@@ -173,6 +289,16 @@ function addContainerAlnus(){
         type: 'line',
         data: alnus.april,
         options: {
+          plugins: {
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    font: {
+                        size: 25
+                    }
+                }
+            }
+        },
     scales: {
     y: {
       beginAtZero: true
