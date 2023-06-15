@@ -59,41 +59,11 @@ function addContainerAll(){
     </div>
     </div>
 
-    <div class="container">
-      <canvas id="all_alnus"></canvas>
-    </div>
   `
 
     const ctx7 = document.getElementById('all_february');
     const ctx8 = document.getElementById('all_march');
     const ctx9 = document.getElementById('all_april');   
-    const ctx10 = document.getElementById('all_alnus');  
-
-    new Chart(ctx10, {
-      type: 'line',
-      data: all.allMounth,
-      options: {
-        
-          plugins: {
-            legend: {
-                labels: {
-                    // This more specific font property overrides the global property
-                    font: {
-                        size: 25
-                    }
-                }
-            }
-        },
-
-      
-  scales: {
-  y: {
-    beginAtZero: true
-  }
-  }
-  }
-    }
-    );
     
     new Chart(ctx7, {
         type: 'doughnut',
@@ -168,12 +138,44 @@ function addContainerCorylus(){
     <div class="container">
       <canvas id="corylus_april"></canvas>
     </div>
+
+    <div class="container">
+      <canvas id="all_corylus"></canvas>
+    </div>
+
     </div>
   `
 
     const ctx = document.getElementById('corylus_february');
     const ctx2 = document.getElementById('corylus_march');
-    const ctx3 = document.getElementById('corylus_april');    
+    const ctx3 = document.getElementById('corylus_april');   
+    const ctx11 = document.getElementById('all_corylus');  
+    
+    new Chart(ctx11, {
+      type: 'line',
+      data: all.allMounthCorylus,
+      options: {
+        
+          plugins: {
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    font: {
+                        size: 25
+                    }
+                }
+            }
+        },
+
+      
+  scales: {
+  y: {
+    beginAtZero: true
+  }
+  }
+  }
+    }
+    );
     
     new Chart(ctx, {
         type: 'line',
@@ -263,12 +265,43 @@ function addContainerAlnus(){
     <div class="container">
       <canvas id="alnus_april"></canvas>
     </div>
+
+    <div class="container">
+      <canvas id="all_alnus"></canvas>
+    </div>
     </div>
   `
 
     const ctx4 = document.getElementById('alnus_february');
     const ctx5 = document.getElementById('alnus_march');
     const ctx6 = document.getElementById('alnus_april');    
+    const ctx10 = document.getElementById('all_alnus');  
+
+    new Chart(ctx10, {
+      type: 'line',
+      data: all.allMounthAlnus,
+      options: {
+        
+          plugins: {
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    font: {
+                        size: 25
+                    }
+                }
+            }
+        },
+
+      
+  scales: {
+  y: {
+    beginAtZero: true
+  }
+  }
+  }
+    }
+    );
     
     new Chart(ctx4, {
         type: 'line',
