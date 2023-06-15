@@ -3,8 +3,8 @@ import alnus from './data/alnus.js'
 import all from './data/all.js'
 
 const numbers = [3448,810,2509,391,194,68]
-let total = 0
-numbers.map(number => total = total + number)
+let total = []
+numbers.map(number => total.push(number*2))
 console.log(total)
 
 const mainbody = document.querySelector('.container_for_pollen')
@@ -25,10 +25,10 @@ function addContainerAll(){
     <h2>Весь пилок за Лютий </h2>
       <canvas id="all_february"></canvas>
       <div class='text_container'>
-      <p class='text_item'>Corylus: 1699</p>
-      <p class='text_item'>Alnus: 454</p>
-      <p class='text_item'>Betula: 50</p>
-      <p class='text_item'>Populus: 14</p>
+      <p class='text_item'>Corylus: 3398</p>
+      <p class='text_item'>Alnus: 908</p>
+      <p class='text_item'>Betula: 100</p>
+      <p class='text_item'>Populus: 28</p>
       </div>
     </div>
 
@@ -36,12 +36,12 @@ function addContainerAll(){
     <h2>Весь пилок за Березень</h2>
       <canvas id="all_march"></canvas>
       <div class='text_container'>
-      <p class='text_item'>Corylus: 1124</p>
-      <p class='text_item'>Alnus: 733</p>
-      <p class='text_item'>Betula: 85</p>
-      <p class='text_item'>Populus: 257</p>
-      <p class='text_item'>Taxus: 168</p>
-      <p class='text_item'>Carpinus: 37</p>
+      <p class='text_item'>Corylus: 2248</p>
+      <p class='text_item'>Alnus: 1466</p>
+      <p class='text_item'>Betula: 170</p>
+      <p class='text_item'>Populus: 514</p>
+      <p class='text_item'>Taxus: 336</p>
+      <p class='text_item'>Carpinus: 74</p>
       </div>
     </div>
 
@@ -49,20 +49,51 @@ function addContainerAll(){
     <h2>Весь пилок за Квітень</h2>
       <canvas id="all_april"></canvas>
       <div class='text_container'> 
-      <p class='text_item'>Corylus: 3448</p>
-      <p class='text_item'>Alnus: 810</p>
-      <p class='text_item'>Betula: 2509</p>
-      <p class='text_item'>Populus: 391</p>
-      <p class='text_item'>Taxus: 194</p>
-      <p class='text_item'>Carpinus: 68</p>
+      <p class='text_item'>Corylus: 6896</p>
+      <p class='text_item'>Alnus: 1620</p>
+      <p class='text_item'>Betula: 5018</p>
+      <p class='text_item'>Populus: 782</p>
+      <p class='text_item'>Taxus: 388</p>
+      <p class='text_item'>Carpinus: 136</p>
       </div>
     </div>
+    </div>
+
+    <div class="container">
+      <canvas id="all_alnus"></canvas>
     </div>
   `
 
     const ctx7 = document.getElementById('all_february');
     const ctx8 = document.getElementById('all_march');
-    const ctx9 = document.getElementById('all_april');    
+    const ctx9 = document.getElementById('all_april');   
+    const ctx10 = document.getElementById('all_alnus');  
+
+    new Chart(ctx10, {
+      type: 'line',
+      data: all.allMounth,
+      options: {
+        
+          plugins: {
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    font: {
+                        size: 25
+                    }
+                }
+            }
+        },
+
+      
+  scales: {
+  y: {
+    beginAtZero: true
+  }
+  }
+  }
+    }
+    );
     
     new Chart(ctx7, {
         type: 'doughnut',
@@ -309,6 +340,8 @@ function addContainerAlnus(){
       );
 
 }
+    
+    
 
 
 
